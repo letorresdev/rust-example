@@ -29,6 +29,9 @@ async fn index(data: web::Data<AppState>) -> String {
 }
 
 
+
+
+
 #[get("/futbol_data")]
 async fn futbol_data() -> impl Responder {
     const ID : &str = "20011";
@@ -66,3 +69,52 @@ async fn main() -> std::io::Result<()> {
     .run()
     .await
 }
+
+
+// Test 1 
+#[test]
+fn test_addition() {
+  let result = 2 + 2;
+  assert_eq!(result, 4);
+}
+
+// Test 2 
+#[test]
+fn test_multiplication() {
+  let result = 2 * 3;
+  assert_eq!(result, 6);
+}
+
+// Test 3 
+#[test]
+fn test_division() {
+  let result = 6 / 2;
+  assert_eq!(result, 3);
+}
+// Test 4
+#[test]
+// #[should_panic]
+fn test_panic() {
+  let v = vec![1, 2, 3];
+  v[99];
+}
+
+pub struct Rectangle {}
+impl Rectangle {
+    pub fn area(height: i32, length: i32) -> i32 {
+        height * length
+    }
+}
+
+
+// Teest 4
+#[cfg(test)]
+mod tests {
+    use super::Rectangle;
+    #[test]
+    fn test_area() {
+        let result = Rectangle::area(5, 4);
+        assert_eq!(result, 4);
+    }
+}
+
