@@ -31,7 +31,7 @@ async fn index(data: web::Data<AppState>) -> String {
 
 #[get("/futbol_data")]
 async fn futbol_data() -> impl Responder {
-    const ID : &str = "2002";
+    const ID : &str = "201";
     let data = get_data_futbol_api(ID).await.unwrap();
     let parsed_json: Value = serde_json::from_str(&data).unwrap(); // let parsed_json: Result<Data> or Result<Value>  = serde_json::from_str(&data);
     let response: Data = serde_json::from_value(parsed_json).unwrap();
