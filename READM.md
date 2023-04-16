@@ -1,3 +1,0 @@
-<!-- @format -->
-
-Example in Rust
