@@ -6,6 +6,8 @@ This is an example of an API in rust. To run this file you must have rust instal
 
 # BUILD - To compile the files for production write in the terminal:
 
+This Build Script can be use in any CI/CD tool of your preference. It is the advantage of write a bash script, you can run it in CI/CD tools. Tools like GitHub Actionsm, Jenkins, Circle, TeamCity and other are able to run Bash Scripts.
+
 ```
 cargo build --release
 ```
