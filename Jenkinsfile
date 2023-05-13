@@ -3,6 +3,8 @@ pipeline {
   
   environment {
     RUST_VERSION = '1.56.0'
+    PATH = "$HOME/.cargo/bin:${env.PATH}"}
+
   }
   
   stages {
