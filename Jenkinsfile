@@ -8,19 +8,15 @@ pipeline {
   stages {
     stage('Install Rust') {
       steps {
-        sh 'apt-get update'
-        sh 'apt-get install python3 -y'
-        sh 'python3 --version'
-        sh  'export PATH=$PATH:$HOME/.local/bin'
-        sh "pip --version"
         sh "curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${env.RUST_VERSION}"
-        sh "export PATH=$PATH:$HOME/.cargo/bin"
+        sh  'export PATH=$HOME/.cargo/bin:$PATH'
         sh 'rustc --version'
       }
     }
     
     stage('Build') {
       steps {
+        sh  'export PATH=$HOME/.cargo/bin:$PATH'
         sh 'cargo build'
       }
     }
