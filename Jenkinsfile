@@ -3,17 +3,13 @@ pipeline {
   
   environment {
     RUST_VERSION = '1.56.0'
-    PATH = "$HOME/.cargo/bin:${env.PATH}"}
-
   }
   
   stages {
     stage('Install Rust') {
       steps {
         sh "curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${env.RUST_VERSION}"
-        sh """
-             . \${HOME}/.cargo/env
-                """
+        sh ". $HOME/.cargo/env"
         sh 'rustc --version'
       }
     }
