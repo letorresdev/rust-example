@@ -10,6 +10,8 @@ pipeline {
       steps {
         sh "python3 --version"
         sh "pip3 list"
+        sh "ls"
+        sh "cd src"
       }
     }
     
