@@ -11,7 +11,6 @@ pipeline {
         sh 'apt-get update'
         sh 'apt-get install python3 -y'
         sh 'python3 --version'
-        sh "pip3 list"
         sh "pip list"
         sh "curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${env.RUST_VERSION}"
         sh "export PATH=$PATH:$HOME/.cargo/bin"
