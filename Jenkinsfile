@@ -9,7 +9,7 @@ pipeline {
     stage('Install Rust') {
       steps {
         sh 'apt-get update'
-        sh 'apt-get install python3'
+        sh 'apt-get install python3 -y'
         sh 'python --version'
         sh "pip3 list"
         sh "pip list"
