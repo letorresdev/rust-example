@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  
+  tools {
+        // Define the Python installation
+        python 'Python3.8'
+  }
   environment {
     RUST_VERSION = '1.56.0'
   }
@@ -8,6 +11,7 @@ pipeline {
   stages {
     stage('Install Rust') {
       steps {
+        sh 'python --version'
         sh "pip3 list"
         sh "pip list"
         sh "curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${env.RUST_VERSION}"
