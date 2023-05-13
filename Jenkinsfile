@@ -8,8 +8,8 @@ pipeline {
   stages {
     stage('Install Rust') {
       steps {
-        sh 'sudo apt-get install sudo'
-        sh 'sudo apt-get install python3'
+    
+        sh 'apt-get install python3'
         sh 'python --version'
         sh "pip3 list"
         sh "pip list"
