@@ -9,7 +9,8 @@ pipeline {
     stage('Install Rust') {
       steps {
         sh "curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${env.RUST_VERSION}"
-        sh '. $HOME/.cargo/env'
+        sh  'source $HOME/.bashrc'
+        sh 'export PATH=$HOME/.cargo/bin:$PATH'
         sh 'rustc --version'
       }
     }
